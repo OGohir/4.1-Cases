@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+/**
+ * This program takes input of up to 5 shopping list
+ * items, and then displays the list.
+ */
+
+class Hero
+{
+  public static void main(String[] args)
+  {
+    Scanner input = new Scanner(System.in);
+    
+    System.out.println("Enter at most 5 items. Use 'end' to quit.");
+    String[] knapsack = new String[5];
+    String item = " ";
+    int i = 0;
+    
+    while (!item.equals("end"))
+    {
+      item = input.nextLine();
+      if(item.equals("end"))
+      {
+          break;
+      }
+      knapsack[i] = item;
+      i++;
+    }
+    
+    System.out.println("Your list:");
+    
+    i = 0;
+    int list_number = 0;
+    
+    while (i < 5)
+    {
+     list_number++;
+     System.out.print(list_number + ".");
+     System.out.println(knapsack[i]);
+     i++;
+    }
+  }
+}
