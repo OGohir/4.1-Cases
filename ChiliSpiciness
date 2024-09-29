@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class ChiliSpiciness 
+{ 
+    public static void main(String[] args) 
+    { 
+        Scanner scanner = new Scanner(System.in); 
+        
+        int totalSpiciness = 0; 
+        
+        int amountOfPeppers = scanner.nextInt(); 
+        scanner.nextLine();
+        
+        for (int i = 0; i < amountOfPeppers; i++)
+        { 
+           String pepper = scanner.nextLine();
+           
+           int pepperSHU = getSHU(pepper); 
+           totalSpiciness += pepperSHU; 
+        } 
+        System.out.println(totalSpiciness); 
+    }
+    
+    public static int getSHU(String pepper) 
+    { 
+        int shuValue = 0;
+        
+        switch (pepper) 
+        {
+            case "Poblano": 
+                shuValue = 1500; 
+            break; 
+            case "Mirasol": 
+                shuValue = 6000; 
+            break; case "Serrano":
+                shuValue = 15500; 
+            break; 
+            case "Cayenne": 
+                shuValue = 40000; 
+            break; 
+            case "Thai": 
+                shuValue = 75000; 
+            break; 
+            case "Habanero": 
+                shuValue = 125000; 
+            break; default: 
+            
+            System.out.println("Unknown pepper: " + pepper); 
+        } 
+            return shuValue; 
+        } 
+    }
